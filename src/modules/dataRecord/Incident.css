@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&display=swap');
+
+body {
+  font-family: 'Noto Serif TC', serif;
+  background: #f5fdfc;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 20px 0;
+  color: #f5fdff;
+  text-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 32px;
+  margin: 20px 0;
+  color: #4C9DB0;
+  text-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+form {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 700px;
+  width: 90%;
+  margin: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 8px;
+  color: #4C9DB0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #4C9DB0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Noto Serif TC', serif;
+  box-sizing: border-box;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #bed9c5;
+  background: #f5fdfc;
+  box-shadow: 0 0 10px rgba(76, 157, 176, 0.3);
+}
+
+button[type="submit"] {
+  background: #4C9DB0;
+  color: #ffebaf;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background: #bed9c5;
+  color: #4C9DB0;
+  transform: scale(1.05);
+}
+
+select {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 18px;
+  color: #4C9DB0;
+  padding: 12px;
+  border: 2px solid #4C9DB0;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #bed9c5;
+  box-shadow: 0 0 10px rgba(76, 157, 176, 0.3);
+}
+
+option {
+  font-family: 'Noto Serif TC', serif;
+  color: #4C9DB0;
+  font-size: 16px;
+}

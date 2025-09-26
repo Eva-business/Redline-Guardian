@@ -1,0 +1,98 @@
+/* App.css */
+
+.app-container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.location-info {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.error-msg {
+  color: red;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.map-box {
+  width: 100%;
+  height: 400px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+/* 醫院列表樣式 */
+.hospital-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hospital-list li {
+  background: #e8f0fe;
+  margin-bottom: 10px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.hospital-list li:hover {
+  background: #d2e3fc;
+}
+
+/* 浮出視窗背景遮罩 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* 醫院卡片樣式 */
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 400px;
+  position: relative;
+}
+
+/* 關閉按鈕 */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hint-text {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}

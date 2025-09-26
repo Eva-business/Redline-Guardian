@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>緊急定位與撥打電話</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<h1>撥打119與地址查詢功能</h1>
+
+<!-- 撥打119的流程提醒 -->
+<details>
+  <summary>撥打119流程</summary>
+  <p><strong>1.</strong> 保持冷靜，先確認傷患意識狀態與是否有危險。</p>
+  <p><strong>2.</strong> 立即撥打119，說明「發生什麼事、在哪裡、多少人受傷」。</p>
+  <p><strong>3.</strong> 可先點擊下方「取得目前位置」快速定位。</p>
+  <p><strong>4.</strong> 持續關注傷患狀況並等待救護車。</p>
+</details>
+
+<!-- 按鈕區塊 -->
+<div id="button-container">
+  <div id="first-row">
+    <button id="get-location">取得目前位置</button>
+    <button id="call-emergency">撥打緊急電話</button>
+    <button id="confirm-call" style="display:none;">確認撥通</button>
+  </div>
+  <div id="second-row">
+    <button id="show-street-view" style="display:none;">顯示街景</button>
+  </div>
+</div>
+
+<!-- 顯示定位與地址 -->
+<p id="location"></p>
+<p id="address"></p>
+
+<!-- 街景顯示 -->
+<div id="street-view" style="display: none; width: 100%; height: 400px;"></div>
+
+<!-- 動態載入 Google Maps API 並初始化 -->
+<script type="module">
+  import { initApp } from './script.js';
+
+  // 從 .env 拿 VITE_ 開頭的環境變數
+  const apiKey = import.meta.env.VITE_GOOGLE_119_MAPS_API_KEY;
+
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initApp`;
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+</script>
+
+</body>
+</html>

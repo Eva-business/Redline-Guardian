@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>傷患資料紀錄</title>
+  <link rel="stylesheet" href="Incident.css">
+  <script src="Incident.js" type="module"></script>
+</head>
+<body>
+    
+  <h1>傷患資料紀錄</h1>
+
+  <label for="identity">請選擇您的身份：</label>
+  <select id="identity">
+    <option value="none">--請選擇--</option>
+    <option value="family">親友家屬</option>
+    <option value="other">其他</option>
+  </select>
+
+  <form id="family-form" style="display:none;">
+    <h2>親友家屬資料表單</h2>
+
+    <label>事發時間與地點：
+      <input type="text" id="f-time-location" placeholder="例如：2025/7/17 下午3點 大安森林公園" required>
+    </label><br>
+
+    <label>病患年齡：
+      <input type="number" id="f-age" placeholder="請輸入數字，例如：45" min="0" max="100" required>
+    </label><br>
+
+    <label>病史：
+      <input type="text" id="f-history" placeholder="例如：糖尿病、高血壓、無特殊病史">
+    </label><br>
+
+    <label>服用藥物：
+      <textarea id="f-medication" placeholder="請列舉目前正在服用的藥物，例如：Metformin、降壓藥等"></textarea>
+    </label><br>
+
+    <label>症狀描述：
+      <textarea id="f-symptoms" placeholder="例如：胸悶、呼吸困難、昏迷、抽搐等" required></textarea>
+    </label><br>
+
+    <label>已採取措施：
+      <textarea id="f-action" placeholder="例如：已CPR、已使用AED、側躺觀察、止血包紮"></textarea>
+    </label><br>
+
+    <label>現場照片：
+        <input type="file" id="f-photo-upload" name="photo" accept="image/*" capture="environment">
+    </label><br>
+
+    <label>備註：
+      <textarea id="f-notes" placeholder="其他需要補充的資訊，例如：附近是否有人協助、現場環境有無危險、家屬已通知等"></textarea>
+    </label><br>
+
+    <button type="submit">送出紀錄</button>
+  </form>
+
+  <form id="other-form" style="display:none;">
+    <h2>不知情人士資料表單</h2>
+
+    <label>事發時間與地點：
+      <input type="text" id="o-time-location" placeholder="例如：2025/7/17 下午3點 大安森林公園" required>
+    </label><br>
+
+    <label>症狀描述：
+      <textarea id="o-symptoms" placeholder="例如：倒地無法動彈、臉色發白、持續咳嗽、無意識等" required></textarea>
+    </label><br>
+
+    <label>已採取措施：
+      <textarea id="o-action" placeholder="例如：呼叫119、協助安置側躺、未進行任何處置"></textarea>
+    </label><br>
+    
+    <label>現場照片：
+        <input type="file" id="f-photo-upload" name="photo" accept="image/*" capture="environment">
+    </label><br>
+
+    <label>備註：
+      <textarea id="o-notes" placeholder="其他可補充資訊，例如：附近是否有人協助、現場環境有無危險等"></textarea>
+    </label><br>
+
+    <button type="submit">送出紀錄</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+:root {
+  --font-stack: 'Segoe UI', Roboto,;
+  --text-color: #2e6265;
+  --background-color: #fff6e3;
+  --primary-color: rgb(32, 104, 123);
+  --primary-hover: rgb(35, 140, 160);
+  --card-bg: #fffaf0;
+  --card-border: #d4d4d4;
+}
+
+h1{
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: rgb(27, 117, 139);
+  text-align: center;
+}
+
+/* 全頁設定 */
+body {
+  font-family: var(--font-stack);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* 任務欄浮動面板樣式 */
+.floating-task-panel {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1.2rem;
+  width: 320px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* 任務標題 */
+.floating-task-panel h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: rgb(27, 117, 139);
+}
+
+/* 單一任務卡片 */
+.task-item {
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+.task-item h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+  color: #225d68;
+}
+
+.task-item p {
+  font-size: 1rem;
+  color: #416b75;
+  margin-bottom: 0.5rem;
+}
+
+/* 按鈕群組 */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* 通用按鈕樣式 */
+button {
+  font-family: var(--font-stack);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* 不同按鈕類型可擴充以下 class（選用） */
+button.leave {
+  background-color: #aa3e3e;
+}
+button.leave:hover {
+  background-color: #d94d4d;
+}
+
+button.complete {
+  background-color: #2e8b57;
+}
+button.complete:hover {
+  background-color: #3aa66b;
+}
+
+/* 若需遮罩 loading 等待狀態 */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 246, 227, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--text-color);
+  z-index: 999;
+}

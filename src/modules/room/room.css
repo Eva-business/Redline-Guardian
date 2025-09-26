@@ -1,0 +1,77 @@
+:root {
+  --font-stack: 'Noto Sans TC', 'Segoe UI', 'Microsoft JhengHei', sans-serif;;
+  --text-color: #2e6265;
+  --background-color: #fff6e3;
+  --primary-color: rgb(32, 104, 123);
+  --primary-hover: rgb(35, 140, 160);
+  --border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-stack);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(27, 117, 139);
+  text-align: center;
+}
+
+/* 容器 */
+.home-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 輸入區塊 */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input[type="text"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: var(--border-radius);
+  flex: 1;
+  min-width: 200px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-hover);
+}
+
+/* 通用按鈕樣式 */
+button {
+  font-family: var(--font-stack);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  line-height: 1.5;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
