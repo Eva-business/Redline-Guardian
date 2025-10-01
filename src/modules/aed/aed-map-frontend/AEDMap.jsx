@@ -63,7 +63,7 @@ useEffect(() => {
     setSelectedAED(null);
 
     try {
-      const url = `http://localhost:3001/nearby?lat=${currentPosition.lat}&lng=${currentPosition.lng}`;
+      const url = `https://redline-aed-api.onrender.com/nearby?lat=${currentPosition.lat}&lng=${currentPosition.lng}`;
       console.log("fetch URL:", url);
       const res = await fetch(url);
       if (!res.ok) {
@@ -132,7 +132,7 @@ useEffect(() => {
 
     try {
       const res = await fetch(
-        `http://localhost:3001/geocode?address=${encodeURIComponent(inputAddress)}`
+        `https://redline-aed-api.onrender.com/geocode?address=${encodeURIComponent(inputAddress)}`
       );
       const data = await res.json();
 

@@ -105,7 +105,7 @@ const SymptomSelector: React.FC = () => {
     formData.append('video', videoFile);
 
     try {
-      const res = await fetch('http://localhost:3000/upload', {
+      const res = await fetch('https://redline-rescue-api.onrender.com/upload', {
         method: 'POST',
         body: formData,
       });
