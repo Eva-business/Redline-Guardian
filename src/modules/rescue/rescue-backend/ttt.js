@@ -26,7 +26,7 @@ const {
 } = process.env;
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;  // ← Render 會提供 PORT
 
 app.use(cors({
   origin: '*', 
@@ -198,5 +198,6 @@ app.post("/upload", upload.single("video"), async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
+
