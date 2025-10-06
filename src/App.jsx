@@ -9,6 +9,9 @@ import RescuePage from "./modules/rescue/rescuePage";
 import EtaPage from "./modules/eta/etaPage"
 import "./App.css";
 
+import CprPose from "./pages/CprPose";
+
+
 const HomePage = () => {
   return (
     <div>
