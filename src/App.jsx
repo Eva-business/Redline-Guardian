@@ -41,6 +41,7 @@ const App = () => (
       <Route path="/etaPage" element={<EtaPage/>} />
       <Route path="/rescue/*" element={<RescuePage />} />
       <Route path="/room/*" element={<RoomMain />} />
+      <Route path="/cpr_pose" element={<CprPose />} />
     </Routes>
   </Router>
 );
