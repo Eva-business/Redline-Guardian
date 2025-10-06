@@ -1,19 +1,21 @@
-html, body {
+/* 不再影響 html, body，因為用 .cprPoseRoot 包住 */
+:global(html),
+:global(body) {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  overflow: hidden;
 }
 
+/* 容器 */
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* 不用改全域的 body 高度 */
+  background: black;
+  overflow: hidden;
 }
 
+/* 每個畫面 panel */
 .panel {
   position: relative;
   flex: 1;
@@ -23,7 +25,8 @@ html, body {
   overflow: hidden;
 }
 
-.switch-camera-btn {
+/* 鏡頭切換按鈕 */
+.switchCameraBtn {
   position: absolute;
   bottom: 15px;
   left: 15px;
@@ -36,11 +39,12 @@ html, body {
   font-size: 24px;
 }
 
-.switch-camera-btn:hover {
+.switchCameraBtn:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.voice-btn {
+/* 語音按鈕 */
+.voiceBtn {
   position: absolute;
   bottom: 65px;
   left: 15px;
@@ -53,21 +57,24 @@ html, body {
   font-size: 24px;
 }
 
-.voice-btn i.muted {
+.voiceBtn i.muted {
   color: gray;
 }
 
-.voice-btn:hover {
+.voiceBtn:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-video, canvas {
+/* video & canvas 限定在本元件下 */
+.panel video,
+.panel canvas {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+/* 橫向顯示 */
 @media (orientation: landscape) {
   .container {
     flex-direction: row;

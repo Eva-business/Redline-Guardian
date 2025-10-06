@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./CprPose.css";
+import styles from "./CprPose.module.css";
 
 export default function CprPose() {
   useEffect(() => {
@@ -109,19 +109,19 @@ export default function CprPose() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="panel">
+    <div className={styles.container}>
+      <div className={styles.panel}>
         <video id="video" autoPlay playsInline muted></video>
         <canvas id="canvas"></canvas>
-        <button id="toggleVoice" className="voice-btn">
+        <button id="toggleVoice" className={styles.voiceBtn}>
           <i id="voiceIcon" className="fi fi-rr-megaphone"></i>
         </button>
-        <button id="switchCamera" className="switch-camera-btn">
+        <button id="switchCamera" className={styles.switchCameraBtn}>
           <i className="fi fi-rr-refresh"></i>
         </button>
       </div>
 
-      <div className="panel">
+      <div className={styles.panel}>
         <video
           id="demoVideo"
           autoPlay
