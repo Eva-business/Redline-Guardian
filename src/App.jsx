@@ -9,7 +9,7 @@ import RescuePage from "./modules/rescue/rescuePage";
 import EtaPage from "./modules/eta/etaPage"
 import "./App.css";
 
-import CprPose from "./pages/CprPose";
+import CprPose from "./cpr_pose/CprPose";
 
 
 const HomePage = () => {
