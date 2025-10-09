@@ -139,7 +139,7 @@ const CPRAssist: React.FC = () => {
 
   // ✅ 新增：導向骨架辨識頁面
   const goToPosePage = () => {
-    window.location.href = "/cpr_pose.html"; 
+    window.location.href = "https://min-shung.github.io/cpr_pose.html"; 
   };
 
   return (
