@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/pose": "^0.1.1606876168",
     "@react-google-maps/api": "^2.20.7",
     "axios": "^1.11.0",
     "cors": "^2.8.5",
