@@ -1,4 +1,5 @@
 import React from 'react';
+import './Allpages.css';
 import burn from '../images/burn.png';
 
 const YouTubeEmbed: React.FC<{ src: string; title: string }> = ({ src, title }) => (
@@ -33,7 +34,7 @@ const CitizenBurnHelp: React.FC = () => {
 
       {/* 一、判斷是否為嚴重燒傷 */}
       <section style={{ marginTop: '2rem' }}>
-        <h2>📌 判斷是不是「嚴重燒燙傷」？</h2>
+        <h2>判斷是不是「嚴重燒燙傷」？</h2>
         <p>符合下列任一情形，請<strong>立即撥打 119</strong>：</p>
         <ul>
           <li>面積 <strong>大於一個身體區塊</strong>（如整條腿、一整個背）</li>
@@ -48,7 +49,7 @@ const CitizenBurnHelp: React.FC = () => {
 
       {/* 二、處理口訣 */}
       <section style={{ marginTop: '2rem' }}>
-        <h2>✅ 處理口訣：沖、脫、泡、蓋、送</h2>
+        <h2>處理口訣：沖、脫、泡、蓋、送</h2>
         {/* 插圖位置 */}
         <div style={{ marginTop: '1rem' }}>
           {/* 用實際圖片網址替代下行 src */}
@@ -81,7 +82,7 @@ const CitizenBurnHelp: React.FC = () => {
           <li>用<strong>乾淨毛巾、紗布、保鮮膜</strong>輕輕蓋住傷口</li>
           <li><strong>不要塗抹任何東西！</strong></li>
           <li>
-            ❌ 牙膏、❌ 醬油、❌ 萬金油、❌ 藥膏 → 全部<strong>都不行！</strong>
+            牙膏、醬油、萬金油、藥膏 → 全部<strong>都不行！</strong>
           </li>
         </ul>
 

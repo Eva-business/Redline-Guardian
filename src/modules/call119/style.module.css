@@ -1,6 +1,6 @@
 .container {
   font-family: 'Noto Serif TC', serif;
-  background: #f5fdfc;
+  background: #3287c8;
   background-size: cover;
   color: #289ca6;
   text-align: center;
@@ -66,6 +66,7 @@ details[open] {
   gap: 35px;
   flex-wrap: wrap;
   justify-content: center;
+  color: #ffffff;
 }
 
 button {
@@ -97,6 +98,7 @@ button:active {
 .location {
   font-size: 18px;
   margin-top: 20px;
+  color: #ffffff;
 }
 
 .address {

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import heimlich from '../images/heimlich.jpg';
 import heimlich_baby from '../images/heimlich_baby.png';
 import baby_cpr from '../images/baby_cpr.png';
+import './Allpages.css';
 
 // ✅ 共用影片嵌入元件
 const YouTubeEmbed: React.FC<{ src: string; title: string }> = ({ src, title }) => (
@@ -115,7 +116,7 @@ const ChokingEmergency: React.FC = () => {
           <button
             onClick={handleCPRClick}
             style={{
-              backgroundColor: '#1976D2',
+              backgroundColor: '#4C9DB0',
               color: '#fff',
               padding: '0.5rem 1rem',
               borderRadius: '6px',
@@ -169,7 +170,7 @@ const ChokingEmergency: React.FC = () => {
           <button
             onClick={handleCPRClick}
             style={{
-              backgroundColor: '#1976D2',
+              backgroundColor: '#4C9DB0',
               color: '#fff',
               padding: '0.5rem 1rem',
               borderRadius: '6px',

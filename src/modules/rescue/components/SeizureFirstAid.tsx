@@ -1,5 +1,6 @@
 import React from 'react';
 import seizure_recovery from '../images/seizure_recovery.png';
+import './Allpages.css';
 
 const SeizureFirstAid: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const SeizureFirstAid: React.FC = () => {
       </section>
 
       <section style={{ marginTop: '2rem' }}>
-        <h2>🚑 正確幫助方法</h2>
+        <h2>正確幫助方法</h2>
 
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1rem' }}>
           <thead>

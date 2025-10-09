@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import heimlich from '../images/heimlich.jpg';
 import heimlich_baby from '../images/heimlich_baby.png';
+import './Allpages.css';
 
 const ChokingEmergency: React.FC = () => {
   const navigate = useNavigate();

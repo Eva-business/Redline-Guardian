@@ -183,7 +183,7 @@ function App() {
 
 return (
   <div className="app-container">
-    <h1 className="app-title">🚑 救護車抵達時間預估</h1>
+    <h1 className="app-title">救護車抵達時間預估</h1>
     <p className="location-info">你現在的位置：<strong>{userAddress}</strong></p>
     {errorMsg && <p className="error-msg">{errorMsg}</p>}
 
@@ -201,7 +201,7 @@ return (
               setSelectedHospital(match || null);
             }}
           >
-            🏥 {item.hospital} → ⏱️ {item.eta}（{item.distance}）
+             {item.hospital}  →  ⏱ {item.eta}（{item.distance}）
           </li>
         ))}
       </ul>

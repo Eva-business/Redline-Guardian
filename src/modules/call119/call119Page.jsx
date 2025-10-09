@@ -39,7 +39,7 @@ const Call119Page = () => {
             6
           )}，經度：${pos.coords.longitude.toFixed(6)}，精確度：約 ±${Math.round(
             pos.coords.accuracy
-          )} 公尺`
+          )} 公尺`,{color:'#FFFFFF'}
         );
 
         // 反查地址

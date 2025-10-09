@@ -1,4 +1,5 @@
 import React from 'react';
+import './Allpages.css';
 
 const BleedingControl: React.FC = () => {
   return (

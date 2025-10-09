@@ -1,4 +1,5 @@
 import React from 'react';
+import './Allpages.css';
 import burn_intro from '../images/burn_intro.jpg';
 
 const ProfessionalBurnHelp: React.FC = () => {
@@ -63,7 +64,7 @@ const ProfessionalBurnHelp: React.FC = () => {
         />
       {/* 二、處理步驟「沖脫泡蓋送」 */}
       <section style={{ marginTop: '2rem' }}>
-        <h2>🚑 傷口處理步驟：「沖脫泡蓋送」</h2>
+        <h2>傷口處理步驟：「沖脫泡蓋送」</h2>
         <h3>1. 沖</h3>
         <ul>
           <li>使用乾淨冷水沖洗 20–30 分鐘</li>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './DangerCheckPage.css'; // ← 新增的樣式匯入！
 
 const dangerOptions = [
   '現場在馬路中間或來車頻繁',
@@ -11,13 +12,13 @@ const dangerOptions = [
   '現場仍有爭執或攻擊風險',
 ];
 
-const DangerCheckPage: React.FC = () => {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+const DangerCheckPage = () => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
   const [showWarning, setShowWarning] = useState(false);
   const navigate = useNavigate();
-  const { roomId } = useParams(); // ← 拿到路由參數 roomId
+  const { roomId } = useParams();
 
-  const toggleDanger = (option: string) => {
+  const toggleDanger = (option) => {
     setSelectedOptions((prev) =>
       prev.includes(option)
         ? prev.filter((o) => o !== option)
@@ -40,129 +41,45 @@ const DangerCheckPage: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        padding: '2rem',
-        maxWidth: '860px',
-        margin: 'auto',
-        fontFamily: '"Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-        color: '#333',
-        lineHeight: '1.6',
-        textAlign: 'left',
-      }}
-    >
-      <h1>🛑 排除環境危險因素</h1>
-      <p style={{ marginTop: '0.75rem' }}>
-        請先確認現場是否安全，避免讓自己陷入危險。
-      </p>
+    <div className="danger-page">
+      <h1>排除環境危險因素</h1>
+      <p>請先確認現場是否安全，避免讓自己陷入危險。</p>
 
-      <section style={{ marginTop: '2rem' }}>
+      <section>
         <h2>⚠️ 危險情況（若無直接點選下一步）</h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '0.75rem 2rem',
-            marginTop: '1rem',
-          }}
-        >
-          {dangerOptions.map((option) => (
-            <label key={option} style={{ display: 'flex', alignItems: 'center' }}>
-              <input
-                type="checkbox"
-                checked={selectedOptions.includes(option)}
-                onChange={() => toggleDanger(option)}
-                style={{ marginRight: '0.5rem' }}
-              />
-              <span>{option}</span>
-            </label>
-          ))}
-        </div>
+        <div className="danger-options">
+            {dangerOptions.map((option) => (
+              <label key={option} className="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={selectedOptions.includes(option)}
+                  onChange={() => toggleDanger(option)}
+                />
+                <span className="custom-checkbox"></span>
+                <span className="checkbox-text">{option}</span>
+              </label>
+            ))}
+          </div>
       </section>
 
-      <div style={{ marginTop: '2.5rem' }}>
-        <button
-          onClick={handleConfirmSafety}
-          style={{
-            backgroundColor: '#0749d8ff',
-            color: 'white',
-            padding: '0.75rem 1.5rem',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            width: '100%',
-          }}
-        >
-          下一步
-        </button>
-      </div>
+      <button className="next-btn" onClick={handleConfirmSafety}>
+        下一步
+      </button>
 
       {showWarning && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: 'white',
-              borderRadius: '16px',
-              padding: '2rem',
-              maxWidth: '500px',
-              width: '100%',
-              textAlign: 'center',
-              border: '2px solid #dc2626',
-            }}
-          >
-            {/* ❌ 關閉按鈕 */}
+        <div className="warning-modal">
+          <div className="warning-card">
             <button
+              className="close-btn"
               onClick={() => setShowWarning(false)}
-              style={{
-                position: 'absolute',
-                top: '0.75rem',
-                right: '0.75rem',
-                background: 'none',
-                border: 'none',
-                fontSize: '2rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                color: '#000000',
-              }}
               aria-label="Close warning"
             >
               ×
             </button>
-            <h3 style={{ color: '#dc2626', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-              ⚠️ 高風險環境警告
-            </h3>
-            <p style={{ fontSize: '1.1rem', marginBottom: '0.75rem' }}>
-              🚫 此為高風險環境，請勿貿然接近現場。
-            </p>
-            <p style={{ marginBottom: '1.5rem' }}>
-              🔔 建議您立即通報 119 或警方，由專業人員處理。
-            </p>
-
-            <button
-              onClick={handleReport}
-              style={{
-                backgroundColor: '#dc2626',
-                color: 'white',
-                padding: '0.75rem 1.5rem',
-                border: 'none',
-                borderRadius: '8px',
-                fontSize: '1.1rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-              }}
-            >
+            <h3>高風險環境警告</h3>
+            <p>此為高風險環境，請勿貿然接近現場。</p>
+            <p>建議您立即通報 119 或警方，由專業人員處理。</p>
+            <button className="report-btn" onClick={handleReport}>
               📞 立即通報
             </button>
           </div>

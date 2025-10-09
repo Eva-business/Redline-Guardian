@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import recovery_position from '../images/recovery_position.png';
+import './Allpages.css';
 
 const ConsciousnessEmergency: React.FC = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const ConsciousnessEmergency: React.FC = () => {
           <li><strong>腿部固定：</strong>將患者對側的腿抬起，並與靠近施救者一側的腿交叉，固定身體。</li>
           <li><strong>保持呼吸道暢通：</strong>頭略微後仰、下巴抬起，使呼吸道暢通，方便口鼻分泌物流出。</li>
         </ol>
-        <p>✅ 持續評估呼吸。</p>
+        <p>持續評估呼吸。</p>
       </section>
 
       {/* 插入復甦姿勢圖片 */}

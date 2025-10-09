@@ -11,6 +11,8 @@ import AEDIcon from "./AEDicon.jpeg";
 const containerStyle = {
   width: "100%",
   height: "80vh",
+  borderRadius: "25px",
+  marginTop: "1rem",
 };
 
 const fallbackPosition = {

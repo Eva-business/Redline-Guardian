@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './Allpages.css';
 
 const MildAllergyHelp: React.FC = () => {
   const navigate = useNavigate();

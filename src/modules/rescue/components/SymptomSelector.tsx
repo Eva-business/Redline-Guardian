@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './DangerCheckPage.css';
 
 const symptoms = [
   '無意識(昏迷)且無呼吸',
@@ -141,14 +142,14 @@ const SymptomSelector: React.FC = () => {
       lineHeight: '1.6',
       textAlign: 'left',
     }}>
-      <h1>🆘 症狀選擇與急救經驗</h1>
+      <h1>症狀選擇與急救經驗</h1>
 
       <section style={{ marginTop: '2rem' }}>
-        <h2>📋 患者主要症狀（可多選）</h2>
+        <h2>患者主要症狀（可多選）</h2>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '0.75rem 2rem',
+          gridTemplateColumns: '2fr 2fr',
+          gap: '0.75rem',
           marginTop: '1rem',
         }}>
           {symptoms.map((symptom) => (
@@ -166,7 +167,7 @@ const SymptomSelector: React.FC = () => {
       </section>
 
       <section style={{ marginTop: '2rem' }}>
-        <h2>🙋‍♂️ 您的急救經驗</h2>
+        <h2>您的急救經驗</h2>
         <select
           value={experience}
           onChange={(e) => setExperience(e.target.value)}
@@ -226,7 +227,7 @@ const SymptomSelector: React.FC = () => {
         <button
           onClick={handleStart}
           style={{
-            backgroundColor: '#2563eb',
+            backgroundColor: '#4C9DB0',
             color: 'white',
             padding: '0.75rem 1.5rem',
             border: 'none',
@@ -237,7 +238,7 @@ const SymptomSelector: React.FC = () => {
             width: '100%',
           }}
         >
-          🚀 開始急救指導
+          開始急救指導
         </button>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import abcImage from '../images/abc-bleeding.jpg'; // ✅ 正確引入圖片
+import './Allpages.css';
+import abcImage from '../images/abc-bleeding.jpg';
 
 const YouTubeEmbed = ({ src, title }) => (
   <div style={{ margin: '2rem 0' }}>
@@ -41,7 +42,7 @@ const PublicBleedingHelp = () => {
       </section>
 
       <section style={{ marginTop: '2rem' }}>
-        <h2>✅ 出血處理口訣 ABC</h2>
+        <h2>出血處理口訣 ABC</h2>
 
         <img
           src={abcImage}

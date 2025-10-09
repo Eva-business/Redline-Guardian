@@ -1,5 +1,6 @@
 import React from 'react';
 import Allergy from '../images/Allergy.jpg';
+import './Allpages.css';
 const SevereAllergyHelp: React.FC = () => {
   return (
     <div

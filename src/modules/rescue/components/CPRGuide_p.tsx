@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './Allpages.css';
 
 const CPRSteps: React.FC = () => {
   const navigate = useNavigate();

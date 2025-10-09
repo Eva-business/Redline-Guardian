@@ -5,6 +5,7 @@ import adult_step1 from '../images/adult_step1.jpg';
 import adult_step2 from '../images/adult_step2.jpg';
 import cprguide from '../images/cpr-guide.png';
 import baby_cpr from '../images/baby_cpr.png';
+import './Allpages.css';
 
 const CPRGuide: React.FC = () => {
   const navigate = useNavigate();

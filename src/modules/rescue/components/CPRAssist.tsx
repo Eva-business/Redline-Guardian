@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import cprguide from '../images/cpr-guide.png';
+import './Allpages.css';
 
 const CPRAssist: React.FC = () => {
   const navigate = useNavigate();
@@ -143,7 +144,7 @@ const CPRAssist: React.FC = () => {
 
   return (
     <div className="cpr-container" style={{ textAlign: "center", padding: "2rem", position: 'relative' }}>
-      {/* ✅ 返回上一頁按鈕 */}
+      {/* 返回上一頁按鈕 */}
       <button
         onClick={() => navigate(-1)}
         style={{
@@ -161,7 +162,7 @@ const CPRAssist: React.FC = () => {
         ⬅ 返回
       </button>
 
-      {/* ✅ 新增「骨架辨識」按鈕 */}
+      {/* 新增「骨架辨識」按鈕 */}
       <button
         onClick={goToPosePage}
         style={{
