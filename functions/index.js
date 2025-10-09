@@ -8,9 +8,9 @@ const app = initializeApp();
 const db = getFirestore(app);
 
 // ✅ 每 1 小時檢查一次
-export const cleanupOldRooms = onSchedule("every 5 minutes", async (event) => {
+export const cleanupOldRooms = onSchedule("every 60 minutes", async (event) => {
   const now = Date.now();
-  const cutoff = now - 5 * 60 * 1000; // 2 小時前
+  const cutoff = now - 2 * 60 * 60 * 1000; // 2 小時前
 
   const snapshot = await db.collection("rooms").get();
 
