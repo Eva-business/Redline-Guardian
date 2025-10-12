@@ -1,10 +1,10 @@
-// ✅ ESM 寫法 for Node.js 20+ / Firebase v12+
+// ✅ 只給 Cloud Functions 用
 import { onSchedule } from "firebase-functions/v2/scheduler";
-import { initializeApp } from "firebase-admin/app";
+import { initializeApp, getApps } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
-// 初始化 Firebase Admin
-const app = initializeApp();
+// 🔒 防止重複初始化（這行很重要）
+const app = getApps().length ? getApps()[0] : initializeApp();
 const db = getFirestore(app);
 
 // ✅ 每 1 小時檢查一次
@@ -13,9 +13,8 @@ export const cleanupOldRooms = onSchedule("every 60 minutes", async (event) => {
   const cutoff = now - 2 * 60 * 60 * 1000; // 2 小時前
 
   const snapshot = await db.collection("rooms").get();
-
-  let deletedCount = 0;
   const batch = db.batch();
+  let deletedCount = 0;
 
   snapshot.forEach((doc) => {
     const data = doc.data();
