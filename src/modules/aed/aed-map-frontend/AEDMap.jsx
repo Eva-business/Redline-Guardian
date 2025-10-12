@@ -310,7 +310,7 @@ useEffect(() => {
               </div>
             ))}
               <button onClick={() => handleShowDirections(selectedAED)}>顯示路線</button>
-              <button onClick={() => openGoogleMaps(selectedAED)}>用 Google 導航</button>
+              <button onClick={() => openGoogleMaps(selectedAED)}>Google 導航</button>
             </div>
           </InfoWindow>
         )}
