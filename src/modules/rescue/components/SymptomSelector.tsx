@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './DangerCheckPage.css';
 
 const symptoms = [
-  '無意識(昏迷)且無呼吸',
+  '無意識昏迷且無呼吸',
   '抓喉、臉色發紫',
-  '無意識(昏迷)且有呼吸',
+  '無意識昏迷且有呼吸',
   '皮膚紅疹、腫脹、呼吸困難',
   '癲癇、身體抽搐',
   '出血不止',
@@ -146,24 +146,19 @@ const SymptomSelector: React.FC = () => {
 
       <section style={{ marginTop: '2rem' }}>
         <h2>患者主要症狀（可多選）</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '2fr 2fr',
-          gap: '0.75rem',
-          marginTop: '1rem',
-        }}>
-          {symptoms.map((symptom) => (
-            <label key={symptom} style={{ display: 'flex', alignItems: 'center' }}>
-              <input
-                type="checkbox"
-                checked={selectedSymptoms.includes(symptom)}
-                onChange={() => toggleSymptom(symptom)}
-                style={{ marginRight: '0.5rem' }}
-              />
-              <span>{symptom}</span>
-            </label>
-          ))}
-        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
+  {symptoms.map(symptom => (
+    <label key={symptom} className="checkbox-label">
+  <input
+    type="checkbox"
+    checked={selectedSymptoms.includes(symptom)}
+    onChange={() => toggleSymptom(symptom)}
+  />
+  <span className="custom-checkbox"></span>
+  <span className="checkbox-text">{symptom}</span>
+</label>
+  ))}
+</div>
       </section>
 
       <section style={{ marginTop: '2rem' }}>

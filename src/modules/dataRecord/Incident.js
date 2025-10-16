@@ -12,7 +12,7 @@ import {
   getDownloadURL
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
-// 🟡 使用你的 firebaseConfig 來替換 ↓
+// firebaseConfig 來替換 ↓
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// ✅ 圖片上傳輔助函式
+// 圖片上傳輔助函式
 async function uploadPhoto(file) {
   if (!file) return null;
   const timestamp = Date.now();
@@ -37,7 +37,7 @@ async function uploadPhoto(file) {
   return await getDownloadURL(snapshot.ref);
 }
 
-// ✅ 表單切換邏輯
+// ✅ 單切換邏輯
 document.getElementById("identity").addEventListener("change", function () {
   const identity = this.value;
   document.getElementById("family-form").style.display = identity === "family" ? "block" : "none";

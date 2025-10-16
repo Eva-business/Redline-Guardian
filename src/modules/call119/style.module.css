@@ -1,19 +1,31 @@
-.container {
+/* 🔹 全域樣式：支援多個容器並保持一致外觀 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #3b99b1;
   font-family: 'Noto Serif TC', serif;
-  background: #3287c8;
-  background-size: cover;
-  color: #289ca6;
+  color: #ffffff;
   text-align: center;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 20px;
-  backdrop-filter: blur(8px);
   background-attachment: fixed;
+  background-size: cover;
 }
 
+/* 🔹 每個容器獨立區塊 */
+.container {
+  background: rgb(57, 166, 168);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  margin: 40px auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 1100px;
+}
+
+/* 🔹 標題 */
 .title {
-  font-size: 52px;
-  margin-bottom: 5px;
+  font-size: 40px;
+  margin-bottom: 10px;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-weight: bold;
@@ -21,25 +33,18 @@
   text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* 🔹 展開內容區 */
 .details {
-  background: rgba(255, 255, 255, 0.226);
+  background: rgba(255, 255, 255, 0.15);
   text-align: left;
   border: 2px solid #ffffff;
   border-radius: 15px;
   margin: 25px auto;
-  padding: 8px;
-  max-width: 1000px;
+  padding: 15px 20px;
+  max-width: 900px;
   color: #ffffff;
-  backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: all 0.3s;
-}
-
-.details:hover {
-  color: #ffffff;
-  box-shadow: 0 8px 25px rgb(255, 246, 169);
-  border: 2px solid #d3d3d3;
-  border-radius: 15px;
 }
 
 summary {
@@ -49,36 +54,38 @@ summary {
 }
 
 details[open] {
-  background: rgba(255, 255, 255, 0.788);
-  color:#1f7871;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1f7871;
   font-weight: bold;
 }
 
+/* 🔹 多個按鈕群組 */
 .buttonContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin-top: 25px;
 }
 
+/* 🔹 每一列按鈕群組 */
 .firstRow {
   display: flex;
-  gap: 35px;
   flex-wrap: wrap;
+  gap: 40px;
   justify-content: center;
-  color: #ffffff;
 }
 
+/* 🔹 按鈕樣式 */
 button {
-  background: rgb(50, 210, 197);
+  background: rgb(234, 208, 41);
   border: 2px solid rgb(55, 182, 184);
-  color: #ffffff;
+  color: #000000;
   padding: 14px 28px;
   border-radius: 50px;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-  backdrop-filter: blur(8px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
@@ -95,6 +102,7 @@ button:active {
   transform: scale(0.98);
 }
 
+/* 🔹 其他資訊區塊 */
 .location {
   font-size: 18px;
   margin-top: 20px;
@@ -111,10 +119,10 @@ button:active {
   border-radius: 20px;
   max-width: 600px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
   line-height: 1.5;
 }
 
+/* 🔹 街景視窗 */
 .streetView {
   width: 100%;
   height: 400px;
@@ -123,19 +131,30 @@ button:active {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 手機適應 */
+/* 🔹 手機版適應 */
 @media (max-width: 480px) {
   .title {
     font-size: 36px;
   }
+
   button {
     font-size: 18px;
     padding: 12px 20px;
   }
+
   .location,
   .address,
   .details {
     font-size: 16px;
     padding: 12px 20px;
+  }
+
+  .firstRow {
+    gap: 20px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 20px;
   }
 }

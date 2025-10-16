@@ -9,7 +9,7 @@ import {
 import AEDIcon from "./AEDicon.jpeg";
 
 const containerStyle = {
-  width: "100%",
+  width: "75vw",//容器地圖寬度10/16更改
   height: "80vh",
   borderRadius: "25px",
   marginTop: "1rem",
@@ -185,9 +185,9 @@ useEffect(() => {
 
   return (
     <>
-     <div style={{ padding: "1rem" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "1rem" }}>AED 地圖</h1>
-      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "0.5rem" }}>
+     <div style={{ padding: "0" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "1rem",fontsize:"3rem" }}>AED 地圖</h1>
+      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "1rem" }}>
         <input
           type="text"
           value={inputAddress}
@@ -195,7 +195,7 @@ useEffect(() => {
           placeholder="請輸入地址"
           style={{
             flex: "1 1 250px",
-            maxWidth: "70%",
+            maxWidth: "50%",
             padding: "0.5rem",
             fontSize: "1rem",
           }}
@@ -203,8 +203,8 @@ useEffect(() => {
         <button
           onClick={handleSearch}
           style={{
-            padding: "0.5rem 1rem",
-            fontSize: "1rem",
+            padding: "1.2rem",
+            fontSize: "1.2rem",
           }}
         >
           搜尋
