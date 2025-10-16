@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import HospitalCard from "./hospitalCard";
 import hospitalDetails from "./csvjson.json";
 import { findBestMatchedHospital as fuzzyMatchHospital } from "./utils";
-import './HospitalCard.css';
 import "./etaPage.css"; // 確保這行有存在
 
 function App() {
