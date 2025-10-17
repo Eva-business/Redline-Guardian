@@ -1,5 +1,3 @@
-import './HospitalCard.css';
-
 function HospitalCard({ hospital, onClose }) {
   if (!hospital) return null;
 
