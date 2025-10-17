@@ -16,6 +16,7 @@ function App() {
   const mapInstance = useRef(null);
   const markerInstance = useRef(null);
   const directionsService = useRef(null);
+  const [infoMsg, setInfoMsg] = useState("");
 
   const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
@@ -197,14 +198,22 @@ return (
             key={idx}
             onClick={() => {
               const match = fuzzyMatchHospital(item.hospital, item.address, hospitalDetails);
-              setSelectedHospital(match || null);
+              if (match) {
+                setSelectedHospital(match);
+                setInfoMsg(""); // 清除舊訊息
+              } else {
+                setSelectedHospital(null);
+                setInfoMsg(`⚠️ ${item.hospital} 暫無詳細資料`);
+              }
             }}
           >
-             {item.hospital}  →  ⏱ {item.eta}（{item.distance}）
+            {item.hospital} → ⏱ {item.eta}（{item.distance}）
           </li>
         ))}
       </ul>
     )}
+
+    {infoMsg && <p className="info-msg">{infoMsg}</p>}
 
     {selectedHospital && (
       <HospitalCard

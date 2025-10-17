@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './DangerCheckPage.css';
 
 const symptoms = [
-  '無意識昏迷且無呼吸',
+  '無意識(昏迷)且無呼吸',
   '抓喉、臉色發紫',
-  '無意識昏迷且有呼吸',
+  '無意識(昏迷)且有呼吸',
   '皮膚紅疹、腫脹、呼吸困難',
   '癲癇、身體抽搐',
   '出血不止',
